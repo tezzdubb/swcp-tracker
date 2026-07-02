@@ -36,7 +36,7 @@ and photos stay on your phone unless you export them yourself.
 ## Support
 
 The app is free and will stay free. If it's useful on your walk, you can
-[buy me a coffee on Ko-fi](https://ko-fi.com/teezzdubb) — and if you love the
+[buy me a coffee on Ko-fi](https://ko-fi.com/tezzdubb) — and if you love the
 path itself, please support the
 [South West Coast Path Association](https://www.southwestcoastpath.org.uk/),
 the charity that keeps the trail walkable.
