@@ -13,7 +13,7 @@
   .wrap { max-width:41rem; margin:0 auto; padding:2.5rem 1.3rem 4rem; }
   h1 { font-size:2rem; margin:0; color:#17523a; }
   h1 .mark { display:inline-block; vertical-align:-6px; margin-right:.45rem; }
-  h2 { font-size:1.25rem; color:#17523a; margin:2.6rem 0 .6rem; }
+  h2 { font-size:1.25rem; color:#17523a; margin:2.4rem 0 .5rem; }
   p { margin:.8rem 0; }
   a { color:#1B6C4A; }
   .kicker { color:#6b7069; font-style:italic; margin-top:.3rem; }
@@ -22,8 +22,6 @@
   .shots { display:flex; gap:.9rem; margin:1.6rem 0 .3rem; overflow-x:auto; padding-bottom:.6rem; }
   .shots img { width:170px; border:1px solid #d8d2c2; border-radius:10px; display:block; }
   .caption { font-size:.85rem; color:#6b7069; font-style:italic; }
-  .note { background:#F2EDE0; border-left:3px solid #1B6C4A; padding:.7rem 1rem; font-size:.95rem; }
-  .sign { margin-top:1rem; }
   hr { border:none; border-top:1px solid #ddd6c4; margin:2.6rem 0; }
   .fine { font-size:.82rem; color:#6b7069; }
   .fine a { color:#6b7069; }
@@ -37,16 +35,9 @@
   </h1>
   <p class="kicker">An Android app for ticking off the South West Coast Path, one section at a time.</p>
 
-  <p>I'm walking the Coast Path the way most people actually walk it: in bits,
-  over more weekends than I first planned. I wanted a simple way to keep score,
-  couldn't find one I liked, so I built this. It's the first app I've ever
-  made, which feels appropriate for a path that's mostly about stubbornly
-  carrying on.</p>
-
-  <p>It does one job. You walk a section, you tick it off, and a green line
-  creeps a little further around the peninsula. There's a journal for each
-  section if you want to remember where the good pasty was, and that's about
-  it.</p>
+  <p>I'm walking the Coast Path in stages and wanted a simple way to keep
+  score, so I built this. You walk a section, you tick it off, and a green
+  line creeps a little further around the peninsula.</p>
 
   <div class="shots">
     <img src="images/01_overview.png" alt="Overview screen with a progress ring showing miles walked">
@@ -54,47 +45,39 @@
     <img src="images/03_map.png" alt="Map of the whole trail, walked stretches in green">
     <img src="images/04_detail.png" alt="A section page with its own map, difficulty and notes">
   </div>
-  <p class="caption">Progress, the 52 sections, the map, and a section page. Yes, I've only done five. It's a long path.</p>
+  <p class="caption">Progress, the 52 sections, the map, and a section page.</p>
 
   <h2>What it does</h2>
   <ul>
-    <li>All 52 official sections, Minehead to South Haven Point, with distances and difficulty. Tick them off whole, or stretch-by-stretch between villages if you're doing it in short days.</li>
-    <li>The whole trail on a proper outdoor map. Walked bits in green, the rest in grey. Tiles you've looked at keep working with no signal, which matters on most of the path.</li>
+    <li>All 52 official sections, Minehead to South Haven Point, with distances and difficulty. Tick them off whole, or stretch-by-stretch between villages.</li>
+    <li>The whole trail on an outdoor map: walked in green, the rest in grey. Tiles you've viewed keep working offline.</li>
     <li>A journal per section: date walked, notes, photos.</li>
-    <li>Backup to a single file, restore on any phone. That's the whole sync strategy.</li>
+    <li>Backup to a single file, restore on any phone.</li>
   </ul>
 
-  <p class="note">The signs say 630 miles. OpenStreetMap, which the app's route
-  data comes from, measures 642.9. The app shows you both and lets you argue
-  with whichever you prefer.</p>
-
-  <h2>It keeps itself to itself</h2>
-  <p>No account, no ads, no analytics. I have no server and I wouldn't know
-  what to do with your data if I had it. Everything lives on your phone unless
+  <h2>Private</h2>
+  <p>No account, no ads, no analytics. Everything stays on your phone unless
   you export it yourself. The <a href="privacy.html">privacy policy</a> is
-  eight short paragraphs mostly saying that in different ways.</p>
+  short.</p>
 
   <h2>Getting it</h2>
-  <p>It's nearly on Google Play. New developers have to run a closed test
-  first, so if you fancy being an early tester (and getting the app now),
+  <p>It's nearly on Google Play — new developers have to run a closed test
+  first. If you'd like to be an early tester and get the app now,
   <a href="https://github.com/tezzdubb/swcp-tracker/issues">open an issue on GitHub</a>
-  and I'll send you the opt-in link. It'll be free either way.</p>
+  and I'll send you the opt-in link. It's free either way.</p>
 
-  <h2>The tip jar</h2>
-  <p>The app is free and staying free. If it earns its keep on your walk you
-  can <a href="https://ko-fi.com/teezzdubb">buy me a coffee</a>. Better yet,
-  chuck a few quid at the
-  <a href="https://www.southwestcoastpath.org.uk/">South West Coast Path Association</a>
-  instead. They fix the steps you'll swear at on the way down to Speke's Mill.</p>
-
-  <p class="sign">— Tom</p>
+  <h2>Support</h2>
+  <p>If the app is useful you can <a href="https://ko-fi.com/teezzdubb">buy me
+  a coffee</a> — or better, support the
+  <a href="https://www.southwestcoastpath.org.uk/">South West Coast Path Association</a>,
+  who maintain the path itself.</p>
 
   <hr>
 
   <p class="fine">SWCP Tracker is an unofficial hobby project with no
   connection to the South West Coast Path Association or National Trails. It's
   a logbook, not a navigation tool: carry a map, and check tides, ferry
-  seasons and the Lulworth firing times before you set out.
+  seasons and firing times before you set out.
   Maps © <a href="https://www.thunderforest.com/">Thunderforest</a>,
   route data © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a> (ODbL).
   <a href="privacy.html">Privacy</a> ·
