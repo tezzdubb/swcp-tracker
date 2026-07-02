@@ -19,8 +19,9 @@
   .kicker { color:#6b7069; font-style:italic; margin-top:.3rem; }
   ul { padding-left:1.3rem; }
   li { margin:.45rem 0; }
-  .shots { display:flex; gap:.9rem; margin:1.6rem 0 .3rem; overflow-x:auto; padding-bottom:.6rem; }
-  .shots img { width:170px; border:1px solid #d8d2c2; border-radius:10px; display:block; }
+  .shots { display:flex; flex-wrap:wrap; justify-content:center; gap:.8rem; margin:1.6rem 0 .3rem; }
+  .shots img { width:140px; border:1px solid #d8d2c2; border-radius:10px; display:block; }
+  @media (min-width:480px) { .shots img { width:150px; } }
   .caption { font-size:.85rem; color:#6b7069; font-style:italic; }
   hr { border:none; border-top:1px solid #ddd6c4; margin:2.6rem 0; }
   .fine { font-size:.82rem; color:#6b7069; }
