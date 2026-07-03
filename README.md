@@ -19,7 +19,8 @@ Path** — the 630-mile National Trail from Minehead to South Haven Point.
   section automatically
 - **Interactive map** — the whole trail drawn over outdoor maps, walked
   stretches in green, remaining in grey; viewed areas are cached and work
-  offline out on the path
+  offline out on the path. It's locked to the coast (no scrolling off to
+  Birmingham), with a one-tap button to reset the view
 - **Walking journal** — every section has a route description, difficulty,
   a date-walked picker and timestamped notes with photos
 - **Backup & restore** — export everything to a single JSON file
@@ -29,9 +30,9 @@ Path** — the 630-mile National Trail from Minehead to South Haven Point.
 No accounts, no ads, no analytics, no tracking. Your walking history, notes
 and photos stay on your phone unless you export them yourself.
 
-| Overview | Map | Section detail |
-|---|---|---|
-| ![Overview](images/01_overview.png) | ![Map](images/03_map.png) | ![Detail](images/04_detail.png) |
+| Overview | Sections | Map | Section detail |
+|---|---|---|---|
+| ![Overview](images/01_overview.png) | ![Sections](images/02_sections.png) | ![Map](images/03_map.png) | ![Detail](images/04_detail.png) |
 
 ## Support
 
