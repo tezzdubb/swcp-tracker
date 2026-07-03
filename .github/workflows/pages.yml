@@ -37,4 +37,8 @@ jobs:
           path: public
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v5
+        # Pinned to v4 (node20), not v5: v5's node24 runtime hits a known
+        # undici HTTP/2 connection bug (nodejs/undici#4552) that makes this
+        # step fail intermittently with "Deployment failed, try again later."
+        # A stray deprecation warning is a fair trade for a deploy that works.
+        uses: actions/deploy-pages@v4
