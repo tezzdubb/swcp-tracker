@@ -5,84 +5,244 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>SWCP Tracker — a South West Coast Path progress app</title>
 <meta name="description" content="A free Android app for ticking off the 630-mile South West Coast Path, section by section. No accounts, no ads, everything stays on your phone.">
+<meta name="theme-color" content="#17523a">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 <style>
-  body {
-    margin:0; background:#FBF8F1; color:#2b332e;
-    font: 17px/1.65 Georgia, 'Times New Roman', serif;
+  :root {
+    --paper:#F9F6EF;
+    --ink:#25312B;
+    --muted:#66716B;
+    --green:#1B6C4A;
+    --green-dark:#15563B;
+    --line:#DCD4C5;
   }
-  .wrap { max-width:41rem; margin:0 auto; padding:2.5rem 1.3rem 4rem; }
-  h1 { font-size:2rem; margin:0; color:#17523a; }
-  h1 .mark { display:inline-block; vertical-align:-6px; margin-right:.45rem; }
-  h2 { font-size:1.25rem; color:#17523a; margin:2.4rem 0 .5rem; }
+  * { box-sizing:border-box; }
+  body {
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font:17px/1.68 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+  }
+  a {
+    color:var(--green);
+    text-underline-offset:3px;
+    text-decoration-thickness:1px;
+  }
+  a:hover { color:var(--green-dark); }
+  .wrap {
+    max-width:62rem;
+    margin:0 auto;
+    padding:2rem 1.25rem 4rem;
+  }
+  .topbar {
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:1rem;
+    margin-bottom:3rem;
+  }
+  .brand {
+    display:flex;
+    align-items:center;
+    gap:.65rem;
+    color:var(--green-dark);
+    font-weight:800;
+    text-decoration:none;
+  }
+  .brand svg { width:34px; height:34px; flex:0 0 auto; }
+  .nav { display:flex; gap:1rem; font-size:.94rem; }
+  .nav a { color:var(--muted); text-decoration:none; }
+  .nav a:hover { color:var(--green-dark); text-decoration:underline; }
+  h1 {
+    max-width:46rem;
+    margin:0;
+    color:var(--green-dark);
+    font-family:Georgia,"Times New Roman",serif;
+    font-size:clamp(2.7rem, 7vw, 5.1rem);
+    line-height:.96;
+    letter-spacing:0;
+  }
+  .kicker {
+    max-width:42rem;
+    margin:1.15rem 0 0;
+    color:var(--muted);
+    font-size:1.2rem;
+    line-height:1.45;
+  }
+  .intro {
+    max-width:43rem;
+    margin:1.25rem 0 0;
+  }
+  .links {
+    display:flex;
+    flex-wrap:wrap;
+    gap:.9rem 1.1rem;
+    margin:1.3rem 0 0;
+    font-weight:700;
+  }
+  .links a { text-decoration:none; border-bottom:1px solid currentColor; }
+  .screens {
+    display:grid;
+    grid-template-columns:repeat(4, minmax(0, 1fr));
+    gap:.8rem;
+    margin:2.2rem 0 0;
+    align-items:start;
+  }
+  .screens img {
+    width:100%;
+    display:block;
+    border:1px solid #D8D1C3;
+    border-radius:12px;
+    background:#F7F0E8;
+  }
+  .caption {
+    margin:.75rem 0 0;
+    color:var(--muted);
+    font-size:.9rem;
+  }
+  .section {
+    border-top:1px solid var(--line);
+    margin-top:2.4rem;
+    padding-top:2rem;
+  }
+  h2 {
+    margin:0 0 .75rem;
+    color:var(--green-dark);
+    font-family:Georgia,"Times New Roman",serif;
+    font-size:1.7rem;
+    line-height:1.2;
+  }
   p { margin:.8rem 0; }
-  a { color:#1B6C4A; }
-  .kicker { color:#6b7069; font-style:italic; margin-top:.3rem; }
-  ul { padding-left:1.3rem; }
-  li { margin:.45rem 0; }
-  .shots { display:flex; flex-wrap:wrap; justify-content:center; gap:.8rem; margin:1.6rem 0 .3rem; }
-  .shots img { width:140px; border:1px solid #d8d2c2; border-radius:10px; display:block; }
-  @media (min-width:480px) { .shots img { width:150px; } }
-  .caption { font-size:.85rem; color:#6b7069; font-style:italic; }
-  hr { border:none; border-top:1px solid #ddd6c4; margin:2.6rem 0; }
-  .fine { font-size:.82rem; color:#6b7069; }
-  .fine a { color:#6b7069; }
+  figure { margin:0; }
+  .feature-list {
+    display:grid;
+    grid-template-columns:repeat(2, minmax(0, 1fr));
+    gap:1.1rem 2rem;
+    margin:1rem 0 0;
+    padding:0;
+    list-style:none;
+  }
+  .feature-list li {
+    padding-top:.85rem;
+    border-top:1px solid var(--line);
+  }
+  .feature-list strong {
+    display:block;
+    color:var(--green-dark);
+    margin-bottom:.2rem;
+  }
+  .columns {
+    display:grid;
+    grid-template-columns:repeat(3, minmax(0, 1fr));
+    gap:2rem;
+  }
+  .note {
+    margin-top:2rem;
+    padding-top:1.1rem;
+    border-top:1px solid var(--line);
+  }
+  .fine {
+    margin-top:2.6rem;
+    padding-top:1.4rem;
+    border-top:1px solid var(--line);
+    color:var(--muted);
+    font-size:.84rem;
+  }
+  .fine a { color:var(--muted); }
+  @media (max-width:760px) {
+    .wrap { padding:1.4rem 1rem 3rem; }
+    .topbar { margin-bottom:2rem; }
+    h1 { font-size:3rem; }
+    .screens { grid-template-columns:repeat(2, minmax(0, 1fr)); }
+    .feature-list, .columns { grid-template-columns:1fr; }
+  }
 </style>
 </head>
 <body>
 <div class="wrap">
 
-  <h1>
-    <span class="mark"><svg width="34" height="34" viewBox="0 0 108 108" xmlns="http://www.w3.org/2000/svg"><rect width="108" height="108" rx="24" fill="#1B6C4A"/><path d="M36,80 C36,66 58,66 58,54 C58,42 40,42 40,32" stroke="#fff" stroke-width="6" stroke-linecap="round" fill="none"/><circle cx="40" cy="22" r="9" fill="#fff"/><circle cx="40" cy="22" r="3.5" fill="#1B6C4A"/><path d="M60,74 c4,-5 8,-5 12,0 c4,5 8,5 12,0 M60,84 c4,-5 8,-5 12,0 c4,5 8,5 12,0" stroke="#fff" stroke-width="4" stroke-linecap="round" fill="none"/></svg></span>SWCP Tracker
-  </h1>
-  <p class="kicker">An Android app for ticking off the South West Coast Path, one section at a time.</p>
+  <header class="topbar">
+    <a class="brand" href="index.html" aria-label="SWCP Tracker home">
+      <svg viewBox="0 0 108 108" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="108" height="108" rx="24" fill="#1B6C4A"/><path d="M36,80 C36,66 58,66 58,54 C58,42 40,42 40,32" stroke="#fff" stroke-width="6" stroke-linecap="round" fill="none"/><circle cx="40" cy="22" r="9" fill="#fff"/><circle cx="40" cy="22" r="3.5" fill="#1B6C4A"/><path d="M60,74 c4,-5 8,-5 12,0 c4,5 8,5 12,0 M60,84 c4,-5 8,-5 12,0 c4,5 8,5 12,0" stroke="#fff" stroke-width="4" stroke-linecap="round" fill="none"/></svg>
+      <span>SWCP Tracker</span>
+    </a>
+    <nav class="nav" aria-label="Site navigation">
+      <a href="privacy.html">Privacy</a>
+      <a href="https://github.com/tezzdubb/swcp-tracker">GitHub</a>
+    </nav>
+  </header>
 
-  <p>I'm walking the Coast Path in stages and wanted a simple way to keep
-  score, so I built this. You walk a section, you tick it off, and a green
-  line creeps a little further around the peninsula.</p>
+  <main>
+    <h1>SWCP Tracker</h1>
+    <p class="kicker">A free Android logbook for ticking off the South West Coast Path, one section at a time.</p>
 
-  <div class="shots">
-    <img src="images/01_overview.png" alt="Overview screen with a progress ring showing miles walked">
-    <img src="images/02_sections.png" alt="The list of 52 sections with tick boxes">
-    <img src="images/03_map.png" alt="Map of the whole trail, walked stretches in green">
-    <img src="images/04_detail.png" alt="A section page with its own map, difficulty and notes">
-  </div>
-  <p class="caption">Progress, the 52 sections, the map, and a section page.</p>
+    <p class="intro">I'm walking the Coast Path in stages and wanted a simple way to keep
+    score, so I built this. You walk a section, you tick it off, and a green
+    line creeps a little further around the peninsula.</p>
 
-  <h2>What it does</h2>
-  <ul>
-    <li>All 52 official sections, Minehead to South Haven Point, with distances and difficulty. Tick them off whole, or stretch-by-stretch between villages.</li>
-    <li>The whole trail on an outdoor map: walked in green, the rest in grey. Tiles you've viewed keep working offline.</li>
-    <li>A journal per section: date walked, notes, photos.</li>
-    <li>Backup to a single file, restore on any phone.</li>
-  </ul>
+    <p class="links">
+      <a href="https://github.com/tezzdubb/swcp-tracker/issues">Get early access</a>
+      <a href="privacy.html">Read the privacy policy</a>
+    </p>
 
-  <h2>Private</h2>
-  <p>No account, no ads, no analytics. Everything stays on your phone unless
-  you export it yourself. The <a href="privacy.html">privacy policy</a> is
-  short.</p>
+    <figure>
+      <div class="screens">
+        <img src="images/01_overview.png" alt="Overview screen with a progress ring showing miles walked">
+        <img src="images/02_sections.png" alt="The list of 52 sections with tick boxes">
+        <img src="images/03_map.png" alt="Map of the whole trail, walked stretches in green">
+        <img src="images/04_detail.png" alt="A section page with its own map, difficulty and notes">
+      </div>
+      <figcaption class="caption">Progress, the 52 sections, the map, and a section page.</figcaption>
+    </figure>
 
-  <h2>Getting it</h2>
-  <p>It's nearly on Google Play — new developers have to run a closed test
-  first. If you'd like to be an early tester and get the app now,
-  <a href="https://github.com/tezzdubb/swcp-tracker/issues">open an issue on GitHub</a>
-  and I'll send you the opt-in link. It's free either way.</p>
+    <section class="section">
+      <h2>What it does</h2>
+      <ul class="feature-list">
+        <li><strong>All 52 official sections</strong>Minehead to South Haven Point, with distances and difficulty. Tick them off whole, or stretch-by-stretch between villages.</li>
+        <li><strong>The whole trail on a map</strong>Walked stretches are green, the rest is grey. Tiles you've viewed keep working offline.</li>
+        <li><strong>A journal per section</strong>Keep the date walked, notes and photos alongside each part of the path.</li>
+        <li><strong>Backup and restore</strong>Export a single backup file and restore it on any phone.</li>
+      </ul>
+    </section>
 
-  <h2>Support</h2>
-  <p>If the app is useful you can <a href="https://ko-fi.com/tezzdubb">buy me
-  a coffee</a> — or better, support the
-  <a href="https://southwestcoastpath.my.salesforce-sites.com/donate/EveryMileMatters">South West Coast Path Association</a>,
-  who maintain the path itself.</p>
+    <section class="section columns">
+      <div>
+        <h2>Private</h2>
+        <p>No account, no ads, no analytics. Everything stays on your phone unless
+        you export it yourself. The <a href="privacy.html">privacy policy</a> is
+        short.</p>
+      </div>
+      <div>
+        <h2>Getting it</h2>
+        <p>It's nearly on Google Play — new developers have to run a closed test
+        first. If you'd like to be an early tester and get the app now,
+        <a href="https://github.com/tezzdubb/swcp-tracker/issues">open an issue on GitHub</a>
+        and I'll send you the opt-in link. It's free either way.</p>
+      </div>
+      <div>
+        <h2>Support</h2>
+        <p>If the app is useful you can <a href="https://ko-fi.com/tezzdubb">buy me
+        a coffee</a> — or better, support the
+        <a href="https://southwestcoastpath.my.salesforce-sites.com/donate/EveryMileMatters">South West Coast Path Association</a>,
+        who maintain the path itself.</p>
+      </div>
+    </section>
 
-  <hr>
+    <p class="note"><strong>Walking it in sections too?</strong>
+    Help test the app before the Google Play listing goes public:
+    <a href="https://github.com/tezzdubb/swcp-tracker/issues">join the closed test</a>.</p>
+  </main>
 
-  <p class="fine">SWCP Tracker is an unofficial hobby project with no
-  connection to the South West Coast Path Association or National Trails. It's
-  a logbook, not a navigation tool: carry a map, and check tides, ferry
-  seasons and firing times before you set out.
-  Maps © <a href="https://www.thunderforest.com/">Thunderforest</a>,
-  route data © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a> (ODbL).
-  <a href="privacy.html">Privacy</a> ·
-  <a href="https://github.com/tezzdubb/swcp-tracker">GitHub</a></p>
+  <footer>
+    <p class="fine">SWCP Tracker is an unofficial hobby project with no
+    connection to the South West Coast Path Association or National Trails. It's
+    a logbook, not a navigation tool: carry a map, and check tides, ferry
+    seasons and firing times before you set out.
+    Maps © <a href="https://www.thunderforest.com/">Thunderforest</a>,
+    route data © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a> (ODbL).
+    <a href="privacy.html">Privacy</a> ·
+    <a href="https://github.com/tezzdubb/swcp-tracker">GitHub</a></p>
+  </footer>
 
 </div>
 </body>

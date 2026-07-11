@@ -4,44 +4,135 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Privacy Policy — SWCP Tracker</title>
+<meta name="theme-color" content="#17523a">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 <style>
-  body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; background:#FFFBF5; color:#28302B; line-height:1.6; }
-  main { max-width:44rem; margin:0 auto; padding:2.5rem 1.5rem 3rem; }
-  h1, h2 { color:#1B6C4A; }
-  a { color:#1B6C4A; }
-  .muted { color:#5c6660; font-size:.92rem; }
+  :root {
+    --paper:#F9F6EF;
+    --ink:#25312B;
+    --muted:#66716B;
+    --green:#1B6C4A;
+    --green-dark:#15563B;
+    --line:#DCD4C5;
+  }
+  * { box-sizing:border-box; }
+  body {
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font:17px/1.68 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+  }
+  a {
+    color:var(--green);
+    text-underline-offset:3px;
+    text-decoration-thickness:1px;
+  }
+  a:hover { color:var(--green-dark); }
+  .wrap {
+    max-width:48rem;
+    margin:0 auto;
+    padding:2rem 1.25rem 4rem;
+  }
+  .topbar {
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:1rem;
+    margin-bottom:3rem;
+  }
+  .brand {
+    display:flex;
+    align-items:center;
+    gap:.65rem;
+    color:var(--green-dark);
+    font-weight:800;
+    text-decoration:none;
+  }
+  .brand svg { width:34px; height:34px; flex:0 0 auto; }
+  .nav { display:flex; gap:1rem; font-size:.94rem; }
+  .nav a { color:var(--muted); text-decoration:none; }
+  .nav a:hover { color:var(--green-dark); text-decoration:underline; }
+  h1 {
+    margin:0;
+    color:var(--green-dark);
+    font-family:Georgia,"Times New Roman",serif;
+    font-size:clamp(2.3rem, 6vw, 3.7rem);
+    line-height:1.02;
+    letter-spacing:0;
+  }
+  h2 {
+    margin:2.1rem 0 .45rem;
+    color:var(--green-dark);
+    font-family:Georgia,"Times New Roman",serif;
+    font-size:1.45rem;
+    line-height:1.2;
+  }
+  p { margin:.75rem 0; }
+  .muted {
+    color:var(--muted);
+    margin-top:.7rem;
+  }
+  .policy {
+    border-top:1px solid var(--line);
+    margin-top:1.8rem;
+    padding-top:.2rem;
+  }
+  .back {
+    border-top:1px solid var(--line);
+    margin-top:2.2rem;
+    padding-top:1rem;
+  }
+  @media (max-width:560px) {
+    .wrap { padding:1.4rem 1rem 3rem; }
+    .topbar { margin-bottom:2rem; }
+  }
 </style>
 </head>
 <body>
-<main>
-  <h1>SWCP Tracker — Privacy Policy</h1>
-  <p class="muted">Last updated: 2 July 2026</p>
+<div class="wrap">
+  <header class="topbar">
+    <a class="brand" href="index.html" aria-label="SWCP Tracker home">
+      <svg viewBox="0 0 108 108" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="108" height="108" rx="24" fill="#1B6C4A"/><path d="M36,80 C36,66 58,66 58,54 C58,42 40,42 40,32" stroke="#fff" stroke-width="6" stroke-linecap="round" fill="none"/><circle cx="40" cy="22" r="9" fill="#fff"/><circle cx="40" cy="22" r="3.5" fill="#1B6C4A"/><path d="M60,74 c4,-5 8,-5 12,0 c4,5 8,5 12,0 M60,84 c4,-5 8,-5 12,0 c4,5 8,5 12,0" stroke="#fff" stroke-width="4" stroke-linecap="round" fill="none"/></svg>
+      <span>SWCP Tracker</span>
+    </a>
+    <nav class="nav" aria-label="Site navigation">
+      <a href="index.html">Home</a>
+      <a href="https://github.com/tezzdubb/swcp-tracker">GitHub</a>
+    </nav>
+  </header>
 
-  <h2>The short version</h2>
-  <p>SWCP Tracker does not collect, store or share any personal data. Everything you record in the app stays on your phone.</p>
+  <main>
+    <h1>SWCP Tracker — Privacy Policy</h1>
+    <p class="muted">Last updated: 2 July 2026</p>
 
-  <h2>Data stored on your device</h2>
-  <p>Your walking progress, dates, journal notes and any photos you attach are stored only in the app's private storage on your device. They are never uploaded anywhere. If you use the export feature, a backup file is written to a location you choose; that file is under your control. Uninstalling the app deletes its data (subject to Android's standard device backup of the progress database, which is encrypted by Android and managed by your Google account settings).</p>
+    <div class="policy">
+      <h2>The short version</h2>
+      <p>SWCP Tracker does not collect, store or share any personal data. Everything you record in the app stays on your phone.</p>
 
-  <h2>No accounts, no analytics, no ads</h2>
-  <p>The app has no sign-up, no advertising, no analytics SDKs and no crash-reporting SDKs. We have no servers and receive nothing from your device.</p>
+      <h2>Data stored on your device</h2>
+      <p>Your walking progress, dates, journal notes and any photos you attach are stored only in the app's private storage on your device. They are never uploaded anywhere. If you use the export feature, a backup file is written to a location you choose; that file is under your control. Uninstalling the app deletes its data (subject to Android's standard device backup of the progress database, which is encrypted by Android and managed by your Google account settings).</p>
 
-  <h2>Map tiles</h2>
-  <p>The map view downloads its background map images ("tiles") from Thunderforest, a third-party map provider (with OpenTopoMap as a fallback). Like any web request, a tile request exposes your IP address and the map area being requested to the provider. No account information or identity is sent — the app has none to send. See the <a href="https://www.thunderforest.com/privacy/">Thunderforest privacy policy</a>. Downloaded tiles are cached on your device so previously viewed areas work offline.</p>
+      <h2>No accounts, no analytics, no ads</h2>
+      <p>The app has no sign-up, no advertising, no analytics SDKs and no crash-reporting SDKs. We have no servers and receive nothing from your device.</p>
 
-  <h2>Photos</h2>
-  <p>When you attach a photo to a journal entry, the app uses Android's photo picker, which lets you share only the specific photo you choose. The app has no general access to your photo library and requests no camera or storage permissions.</p>
+      <h2>Map tiles</h2>
+      <p>The map view downloads its background map images ("tiles") from Thunderforest, a third-party map provider (with OpenTopoMap as a fallback). Like any web request, a tile request exposes your IP address and the map area being requested to the provider. No account information or identity is sent — the app has none to send. See the <a href="https://www.thunderforest.com/privacy/">Thunderforest privacy policy</a>. Downloaded tiles are cached on your device so previously viewed areas work offline.</p>
 
-  <h2>Children</h2>
-  <p>The app is intended for a general audience and collects no data from anyone, including children.</p>
+      <h2>Photos</h2>
+      <p>When you attach a photo to a journal entry, the app uses Android's photo picker, which lets you share only the specific photo you choose. The app has no general access to your photo library and requests no camera or storage permissions.</p>
 
-  <h2>Changes</h2>
-  <p>If a future version of the app ever changes any of the above, this policy will be updated here before that version is released.</p>
+      <h2>Children</h2>
+      <p>The app is intended for a general audience and collects no data from anyone, including children.</p>
 
-  <h2>Contact</h2>
-  <p>Questions? Get in touch via <a href="https://github.com/tezzdubb">GitHub</a>.</p>
+      <h2>Changes</h2>
+      <p>If a future version of the app ever changes any of the above, this policy will be updated here before that version is released.</p>
 
-  <p><a href="index.html">← Back to SWCP Tracker</a></p>
-</main>
+      <h2>Contact</h2>
+      <p>Questions? Get in touch via <a href="https://github.com/tezzdubb">GitHub</a>.</p>
+    </div>
+
+    <p class="back"><a href="index.html">← Back to SWCP Tracker</a></p>
+  </main>
+</div>
 </body>
 </html>
